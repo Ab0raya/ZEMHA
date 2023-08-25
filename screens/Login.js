@@ -1,9 +1,7 @@
-import { View, Text, Image, Alert } from "react-native";
+import { ScrollView, Text, Image, Alert, View } from "react-native";
 import React, { useCallback, useReducer, useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import PageContainer from "../components/PageContainer";
 import { FONTS, SIZES, images } from "../constants";
-import { COLORS } from "../constants";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { reducer } from "../utils/reducers/formReducers";
@@ -79,7 +77,13 @@ const Login = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#E9BCBE" }}>
-      <PageContainer>
+      <ScrollView
+        style={{
+          flex: 1,
+
+          marginHorizontal: 22,
+        }}
+      >
         <View
           style={{
             flex: 1,
@@ -101,54 +105,54 @@ const Login = ({ navigation }) => {
           <Image
             source={images.logo}
             style={{
-              height: 250,
-              width: 250,
+              height: 300,
+              width: 200,
               marginBottom: 22,
             }}
           />
-
-          <Text
-            style={{
-              ...FONTS.h4,
-              color: colors.text,
-              marginVertical: 8,
-            }}
-          >
-            Login to your account
-          </Text>
-
-          <Input
-            onInputChanged={inputChangedHandler}
-            errorText={formState.inputValidities["email"]}
-            id="email"
-            placeholder="Enter your email"
-            placeholderTextColor={colors.text}
-          />
-
-          <Input
-            onInputChanged={inputChangedHandler}
-            errorText={formState.inputValidities["password"]}
-            id="password"
-            placeholder="Enter your password"
-            placeholderTextColor={colors.text}
-            secureTextEntry
-          />
-
-          <Button
-            title="Login"
-            filled
-            isLoading={isLoading}
-            onPress={loginHandler}
-            style={{
-              width: SIZES.width - 44,
-              marginBottom: SIZES.padding,
-              backgroundColor: "transparent",
-              borderColor: "black",
-              marginVertical: 20,
-            }}
-          />
         </View>
-      </PageContainer>
+
+        <Text
+          style={{
+            ...FONTS.h4,
+            color: colors.text,
+            marginVertical: 8,
+          }}
+        >
+          Login to your account
+        </Text>
+
+        <Input
+          onInputChanged={inputChangedHandler}
+          errorText={formState.inputValidities["email"]}
+          id="email"
+          placeholder="Enter your email"
+          placeholderTextColor={colors.text}
+        />
+
+        <Input
+          onInputChanged={inputChangedHandler}
+          errorText={formState.inputValidities["password"]}
+          id="password"
+          placeholder="Enter your password"
+          placeholderTextColor={colors.text}
+          secureTextEntry
+        />
+
+        <Button
+          title="Login"
+          filled
+          isLoading={isLoading}
+          onPress={loginHandler}
+          style={{
+            width: SIZES.width - 44,
+            marginBottom: SIZES.padding,
+            backgroundColor: "transparent",
+            borderColor: "black",
+            marginVertical: 20,
+          }}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

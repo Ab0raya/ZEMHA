@@ -1,7 +1,7 @@
-import { View, Text, Image, Alert } from "react-native";
+import { ScrollView, Text, Image, Alert, View } from "react-native";
 import React, { useCallback, useReducer, useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import PageContainer from "../components/PageContainer";
+
 import { FONTS, SIZES, images } from "../constants";
 import { COLORS } from "../constants";
 import Input from "../components/Input";
@@ -101,7 +101,13 @@ const Register = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FDEB93" }}>
-      <PageContainer>
+      <ScrollView
+        style={{
+          flex: 1,
+
+          marginHorizontal: 22,
+        }}
+      >
         <View
           style={{
             flex: 1,
@@ -123,8 +129,8 @@ const Register = ({ navigation }) => {
           <Image
             source={images.logo}
             style={{
-              height: 250,
-              width: 250,
+              height: 300,
+              width: 200,
               marginBottom: 22,
             }}
           />
@@ -138,47 +144,47 @@ const Register = ({ navigation }) => {
           >
             Hope you Enjoy our App :)
           </Text>
-
-          <Input
-            onInputChanged={inputChangedHandler}
-            errorText={formState.inputValidities["fullName"]}
-            id="fullName"
-            placeholder="Enter your full name"
-            placeholderTextColor={colors.text}
-          />
-
-          <Input
-            onInputChanged={inputChangedHandler}
-            errorText={formState.inputValidities["email"]}
-            id="email"
-            placeholder="Enter your email"
-            placeholderTextColor={colors.text}
-          />
-
-          <Input
-            onInputChanged={inputChangedHandler}
-            errorText={formState.inputValidities["password"]}
-            id="password"
-            placeholder="Enter your password"
-            placeholderTextColor={colors.text}
-            secureTextEntry
-          />
-
-          <Button
-            title="Register"
-            onPress={authHandler}
-            isLoading={isLoading}
-            filled
-            style={{
-              width: SIZES.width - 44,
-              marginBottom: SIZES.padding,
-              marginVertical: 8,
-              backgroundColor: "transparent",
-              borderColor: "black",
-            }}
-          />
         </View>
-      </PageContainer>
+
+        <Input
+          onInputChanged={inputChangedHandler}
+          errorText={formState.inputValidities["fullName"]}
+          id="fullName"
+          placeholder="Enter your full name"
+          placeholderTextColor={colors.text}
+        />
+
+        <Input
+          onInputChanged={inputChangedHandler}
+          errorText={formState.inputValidities["email"]}
+          id="email"
+          placeholder="Enter your email"
+          placeholderTextColor={colors.text}
+        />
+
+        <Input
+          onInputChanged={inputChangedHandler}
+          errorText={formState.inputValidities["password"]}
+          id="password"
+          placeholder="Enter your password"
+          placeholderTextColor={colors.text}
+          secureTextEntry
+        />
+
+        <Button
+          title="Register"
+          onPress={authHandler}
+          isLoading={isLoading}
+          filled
+          style={{
+            width: SIZES.width - 44,
+            marginBottom: SIZES.padding,
+            marginVertical: 8,
+            backgroundColor: "transparent",
+            borderColor: "black",
+          }}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

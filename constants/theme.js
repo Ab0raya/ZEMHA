@@ -10,6 +10,10 @@ export const COLORS = {
   tertiaryBlack: "#202123",
   gray: "F8F8F8",
   secondaryGray: "#808080",
+  Bot1: "#84414A",
+  Bot2: "#3A9276",
+  Bot3: "#93741D",
+  Bot4: "#223B73",
 };
 
 export const SIZES = {

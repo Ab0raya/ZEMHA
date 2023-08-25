@@ -8,7 +8,6 @@ import { Bubble, GiftedChat } from "react-native-gifted-chat";
 import { useTheme } from "../themes/ThemeProvider";
 import { useRoute } from "@react-navigation/native";
 
-// Thanks for watching...
 const Chat = ({ navigation }) => {
   const route = useRoute();
   const [inputMessage, setInputMessage] = useState("");
@@ -204,14 +203,6 @@ const Chat = ({ navigation }) => {
     }
   };
 
-  // const submitHandler = () => {
-  //   if (inputMessage.toLowerCase().startsWith("generate image")) {
-  //     generateImages();
-  //   } else {
-  //     generateText();
-  //   }
-  // };
-
   const handleInputText = (text) => {
     setInputMessage(text);
   };
@@ -228,7 +219,7 @@ const Chat = ({ navigation }) => {
       <View
         style={{
           height: 60,
-          backgroundColor: route.params.color,
+          backgroundColor: "route.params.color",
           //==================================================
           position: "absolute",
           top: 0,

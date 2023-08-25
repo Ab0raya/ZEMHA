@@ -3,7 +3,6 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, FONTS, SIZES, images } from "../constants";
 import { StatusBar } from "expo-status-bar";
-import PageContainer from "../components/PageContainer";
 import Button from "../components/Button";
 import { useTheme } from "../themes/ThemeProvider";
 
@@ -12,66 +11,55 @@ const Welcome = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#9EF2A4" }}>
       <StatusBar style="light" />
-      <PageContainer>
-        <View
+
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Image
+          source={images.logo}
           style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
+            height: 300,
+            width: 200,
+            marginBottom: 22,
+          }}
+        />
+
+        <Text
+          style={{
+            ...FONTS.body3,
+            color: colors.text,
+            marginBottom: 36,
           }}
         >
-          <Image
-            source={images.logo}
-            style={{
-              height: 250,
-              width: 250,
-              marginBottom: 22,
-            }}
-          />
+          Login or create account if you don't have one
+        </Text>
 
-          <Text
-            style={{
-              ...FONTS.h4,
-              color: colors.text,
-              marginVertical: 8,
-            }}
-          >
-            Welcome to 3AWAD
-          </Text>
+        <Button
+          title="Log in"
+          onPress={() => navigation.navigate("Login")}
+          style={{
+            width: SIZES.width - 44,
+            marginBottom: SIZES.padding,
+            backgroundColor: "transparent",
+            borderColor: "black",
+          }}
+        />
 
-          <Text
-            style={{
-              ...FONTS.body3,
-              color: colors.text,
-              marginBottom: 36,
-            }}
-          >
-            Login or create account if you don't have one
-          </Text>
-
-          <Button
-            title="Log in"
-            onPress={() => navigation.navigate("Login")}
-            style={{
-              width: SIZES.width - 44,
-              marginBottom: SIZES.padding,
-              backgroundColor: "transparent",
-              borderColor: "black",
-            }}
-          />
-
-          <Button
-            title="Create an account"
-            onPress={() => navigation.navigate("Register")}
-            style={{
-              width: SIZES.width - 44,
-              marginBottom: SIZES.padding,
-              backgroundColor: "transparent",
-              borderColor: "black",
-            }}
-          />
-        </View>
-      </PageContainer>
+        <Button
+          title="Create an account"
+          onPress={() => navigation.navigate("Register")}
+          style={{
+            width: SIZES.width - 44,
+            marginBottom: SIZES.padding,
+            backgroundColor: "transparent",
+            borderColor: "black",
+          }}
+        />
+      </View>
     </SafeAreaView>
   );
 };

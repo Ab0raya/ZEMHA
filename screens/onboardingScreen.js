@@ -50,21 +50,47 @@ const OnboardingScreen = ({ navigation }) => {
       pages={[
         {
           backgroundColor: "#a6e4d0",
-          image: <Image source={require("../assets/onboarding-img1.png")} />,
-          title: "Connect to the World",
-          subtitle: "A New Way To Connect With The World",
+          image: (
+            <Image
+              style={styles.images}
+              source={require("../assets/images/onboarding/onboarding1.png")}
+            />
+          ),
+          title: "Be more productive",
+          subtitle: "increase your productivity by using our app",
         },
         {
           backgroundColor: "#fdeb93",
-          image: <Image source={require("../assets/onboarding-img2.png")} />,
-          title: "Share Your Favorites",
-          subtitle: "Share Your Thoughts With Similar Kind of People",
+          image: (
+            <Image
+              style={styles.images}
+              source={require("../assets/images/onboarding/onboarding2.png")}
+            />
+          ),
+          title: "Save Your Time",
+          subtitle: "Finish your taks and assignments by a few clicks",
         },
         {
           backgroundColor: "#e9bcbe",
-          image: <Image source={require("../assets/onboarding-img3.png")} />,
-          title: "Become The Star",
-          subtitle: "Let The Spot Light Capture You",
+          image: (
+            <Image
+              style={styles.images}
+              source={require("../assets/images/onboarding/onboarding3.png")}
+            />
+          ),
+          title: "ZEMHA and his friends",
+          subtitle: "",
+        },
+        {
+          backgroundColor: "#407BFF",
+          image: (
+            <Image
+              style={styles.images}
+              source={require("../assets/images/onboarding/onboarding4.png")}
+            />
+          ),
+          title: "Become Nerd",
+          subtitle: "",
         },
       ]}
     />
@@ -78,5 +104,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  images: {
+    width: 350,
+    height: 350,
   },
 });
