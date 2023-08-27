@@ -68,7 +68,6 @@ const Login = ({ navigation }) => {
     }
   };
 
-  // handle errors
   useEffect(() => {
     if (error) {
       Alert.alert("An error occurred", error);
@@ -103,10 +102,10 @@ const Login = ({ navigation }) => {
             Login page
           </Text>
           <Image
-            source={images.logo}
+            source={require("../assets/GIF/login.gif")}
             style={{
-              height: 300,
-              width: 200,
+              height: 350,
+              width: 300,
               marginBottom: 22,
             }}
           />

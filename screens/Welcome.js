@@ -5,7 +5,6 @@ import { COLORS, FONTS, SIZES, images } from "../constants";
 import { StatusBar } from "expo-status-bar";
 import Button from "../components/Button";
 import { useTheme } from "../themes/ThemeProvider";
-
 const Welcome = ({ navigation }) => {
   const { colors } = useTheme();
   return (
@@ -19,11 +18,21 @@ const Welcome = ({ navigation }) => {
           justifyContent: "center",
         }}
       >
-        <Image
-          source={images.logo}
+        <Text
           style={{
-            height: 300,
-            width: 200,
+            marginBottom: 120,
+            ...FONTS.h5,
+            color: colors.text,
+            marginVertical: 8,
+          }}
+        >
+          Welcome to ZEMHA
+        </Text>
+        <Image
+          source={require("../assets/GIF/welcome.gif")}
+          style={{
+            height: 400,
+            width: 400,
             marginBottom: 22,
           }}
         />

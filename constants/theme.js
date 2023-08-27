@@ -17,7 +17,6 @@ export const COLORS = {
 };
 
 export const SIZES = {
-  // Global SIZES
   base: 8,
   font: 14,
   radius: 30,
@@ -25,7 +24,6 @@ export const SIZES = {
   padding2: 12,
   padding3: 16,
 
-  // FONTS Sizes
   largeTitle: 50,
   h1: 30,
   h2: 22,
@@ -38,7 +36,6 @@ export const SIZES = {
   body4: 14,
   body5: 30,
 
-  // App Dimensions
   width,
   height,
 };

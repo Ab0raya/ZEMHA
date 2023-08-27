@@ -3,6 +3,7 @@ import { Welcome, Login, Register, Chat, Home } from "../screens";
 import { NavigationContainer } from "@react-navigation/native";
 import OnboardingScreen from "../screens/onboardingScreen";
 import Docs from "../screens/Docs";
+import ToDoList from "../screens/ToDoList";
 
 const Stack = createNativeStackNavigator();
 
@@ -11,19 +12,17 @@ const AppNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="onboarding"
+          component={OnboardingScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Home"
           component={Home}
           options={{
             headerShown: false,
           }}
         />
-
-        <Stack.Screen
-          name="onboarding"
-          component={OnboardingScreen}
-          options={{ headerShown: false }}
-        />
-
         <Stack.Screen
           name="Register"
           component={Register}
@@ -57,6 +56,13 @@ const AppNavigation = () => {
         <Stack.Screen
           name="Docs"
           component={Docs}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ToDo"
+          component={ToDoList}
           options={{
             headerShown: false,
           }}

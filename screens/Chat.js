@@ -1,7 +1,7 @@
 import { View, TouchableOpacity, TextInput, Image, Text } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { COLORS, SIZES, FONTS, images } from "../constants";
+import { COLORS, SIZES, FONTS } from "../constants";
 import { StatusBar } from "expo-status-bar";
 import { MaterialIcons, FontAwesome, Ionicons } from "@expo/vector-icons";
 import { Bubble, GiftedChat } from "react-native-gifted-chat";
@@ -60,9 +60,8 @@ const Chat = ({ navigation }) => {
           <Image
             source={route.params.image}
             style={{
-              height: 40,
+              height: 30,
               width: 40,
-              borderRadius: 20,
               marginLeft: 8,
             }}
           />
@@ -87,7 +86,6 @@ const Chat = ({ navigation }) => {
     return <Bubble {...props} />;
   };
 
-  // Implementing chat generation using gpt-3.5-turbo model
   const generateText = () => {
     setIsTyping(true);
     const message = {
@@ -103,7 +101,7 @@ const Chat = ({ navigation }) => {
     setMessages((previousMessage) =>
       GiftedChat.append(previousMessage, [message])
     );
-
+    //API key and home url fot text and image
     //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
     //https://api.openai.com/v1/chat/completions
     //https://api.openai.com/v1/images/generations
@@ -145,7 +143,6 @@ const Chat = ({ navigation }) => {
       });
   };
 
-  // implementing images generations
   const generateImages = () => {
     setIsTyping(true);
     const message = {
@@ -211,7 +208,6 @@ const Chat = ({ navigation }) => {
     <SafeAreaView
       style={{
         flex: 1,
-        //==================================================
         backgroundColor: route.params.color,
       }}
     >
@@ -220,7 +216,6 @@ const Chat = ({ navigation }) => {
         style={{
           height: 60,
           backgroundColor: "route.params.color",
-          //==================================================
           position: "absolute",
           top: 0,
           right: 0,
@@ -257,7 +252,6 @@ const Chat = ({ navigation }) => {
           {route.params.name}
         </Text>
       </View>
-
       <View style={{ flex: 1, justifyContent: "center" }}>
         <GiftedChat
           messages={messages}

@@ -89,7 +89,7 @@ const OnboardingScreen = ({ navigation }) => {
               source={require("../assets/images/onboarding/onboarding4.png")}
             />
           ),
-          title: "Become Nerd",
+          title: "Take notes for your tasks",
           subtitle: "",
         },
       ]}

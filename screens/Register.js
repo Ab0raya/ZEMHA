@@ -92,7 +92,6 @@ const Register = ({ navigation }) => {
     }
   };
 
-  // Display error if something went wrong
   useEffect(() => {
     if (error) {
       Alert.alert("An error occured", error);
@@ -127,10 +126,10 @@ const Register = ({ navigation }) => {
             Register page
           </Text>
           <Image
-            source={images.logo}
+            source={require("../assets/GIF/register.gif")}
             style={{
               height: 300,
-              width: 200,
+              width: 300,
               marginBottom: 22,
             }}
           />
