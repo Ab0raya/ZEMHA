@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: 100,
     width: Dimensions.get("window").width - 50,
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    backgroundColor: "rgba(255, 255, 255, 0.7)",
     flexDirection: "row",
     borderRadius: 15,
     marginTop: 720,

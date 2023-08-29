@@ -13,7 +13,10 @@ export default function BotsList() {
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <TouchableOpacity
-        style={styles.bot1}
+        style={[
+          styles.container,
+          { backgroundColor: "rgba(132, 65, 74, 0.85)" },
+        ]}
         onPress={() =>
           navigation.navigate("Chat", {
             color: COLORS.Bot1,
@@ -31,7 +34,10 @@ export default function BotsList() {
         <Text style={styles.desbot1}>General</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.bot2}
+        style={[
+          styles.container,
+          { backgroundColor: "rgba(58, 146, 118, 0.85)" },
+        ]}
         onPress={() =>
           navigation.navigate("Chat", {
             color: COLORS.Bot2,
@@ -49,7 +55,10 @@ export default function BotsList() {
         <Text style={styles.desbot2}>Text reformat</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.bot3}
+        style={[
+          styles.container,
+          { backgroundColor: "rgba(147, 116, 29, 0.85)" },
+        ]}
         onPress={() =>
           navigation.navigate("Chat", {
             color: COLORS.Bot3,
@@ -67,7 +76,10 @@ export default function BotsList() {
         <Text style={styles.desbot3}>Programming</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.bot4}
+        style={[
+          styles.container,
+          { backgroundColor: "rgba(34, 59, 115, 0.85)" },
+        ]}
         onPress={() =>
           navigation.navigate("Chat", {
             color: COLORS.Bot4,
@@ -89,13 +101,6 @@ export default function BotsList() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "absolute",
-  },
   textbot1: {
     alignSelf: "center",
     position: "absolute",
@@ -168,41 +173,12 @@ const styles = StyleSheet.create({
     color: "#407BFF",
     fontWeight: "bold",
   },
-  bot1: {
-    elevation: 10,
+  container: {
     width: 322,
     height: 620,
     borderRadius: 30,
-    backgroundColor: "#84414A",
     marginRight: 24,
     margin: 40,
-    marginTop: 10,
-  },
-  bot2: {
-    elevation: 10,
-    width: 322,
-    height: 620,
-    borderRadius: 30,
-    backgroundColor: "#3A9276",
-    marginRight: 24,
-    marginTop: 10,
-  },
-  bot3: {
-    elevation: 10,
-    width: 322,
-    height: 620,
-    borderRadius: 30,
-    backgroundColor: "#93741D",
-    marginRight: 24,
-    marginTop: 10,
-  },
-  bot4: {
-    elevation: 10,
-    width: 322,
-    height: 620,
-    borderRadius: 30,
-    backgroundColor: "#223B73",
-    marginRight: 24,
     marginTop: 10,
   },
   bots: {

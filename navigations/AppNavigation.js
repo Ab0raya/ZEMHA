@@ -16,6 +16,7 @@ const AppNavigation = () => {
           component={OnboardingScreen}
           options={{ headerShown: false }}
         />
+
         <Stack.Screen
           name="Home"
           component={Home}
@@ -23,6 +24,7 @@ const AppNavigation = () => {
             headerShown: false,
           }}
         />
+
         <Stack.Screen
           name="Register"
           component={Register}
@@ -30,6 +32,7 @@ const AppNavigation = () => {
             headerShown: false,
           }}
         />
+
         <Stack.Screen
           name="Login"
           component={Login}
@@ -53,6 +56,7 @@ const AppNavigation = () => {
             headerShown: false,
           }}
         />
+
         <Stack.Screen
           name="Docs"
           component={Docs}

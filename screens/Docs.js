@@ -21,9 +21,7 @@ export default function Docs({ navigation: { goBack } }) {
   let [Teacher, setTeacher] = useState("");
   let [Content, setContent] = useState("");
   const [isModalVisible, setIsModalVisible] = React.useState(false);
-
   var date = new Date().toLocaleString();
-  console.log(date);
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
   const html = `
   <!DOCTYPE html>
@@ -120,7 +118,6 @@ export default function Docs({ navigation: { goBack } }) {
             <AntDesign name="left" size={33} />
           </Text>
         </TouchableOpacity>
-
         <Text style={styles.text1} fontSize>
           PDF
         </Text>

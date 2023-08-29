@@ -11,17 +11,12 @@ import { useRoute } from "@react-navigation/native";
 const Chat = ({ navigation }) => {
   const route = useRoute();
   const [inputMessage, setInputMessage] = useState("");
-  const [outputMessage, setOutputMessage] = useState(
-    "Results should be shown here."
-  );
+  const [outputMessage, setOutputMessage] = useState("Results should be here.");
   const [isTyping, setIsTyping] = useState(false);
-
   const [messages, setMessages] = useState([]);
   const { colors } = useTheme();
-
   const renderMessage = (props) => {
     const { currentMessage } = props;
-
     if (currentMessage.user._id === 1) {
       return (
         <View
@@ -82,8 +77,6 @@ const Chat = ({ navigation }) => {
         </View>
       );
     }
-
-    return <Bubble {...props} />;
   };
 
   const generateText = () => {
@@ -92,7 +85,7 @@ const Chat = ({ navigation }) => {
       _id: Math.random().toString(36).substring(7),
       text:
         route.params.hint === "Enter the text you want to reformatte..."
-          ? "reformatte this words ..." + inputMessage
+          ? "reformat this words ..." + inputMessage
           : inputMessage,
       createAt: new Date(),
       user: { _id: 1 },
